@@ -21,22 +21,30 @@ async def setAfter(r, x1, x2, opc):
 async def main():
     opcion = input("Que desea Realizar? ")
 
+    opc = opcion.split("\\")
+    opc.remove("")
+    
+    contador = 0
+
     loop = asyncio.get_running_loop()
 
     operaciones = [
-        ["\div", "división"],
-        ["\mult", "multiplicación"],
-        ["\sum", "suma"],
-        ["\minus", "resta"]
+        ["div", "división"],
+        ["mult", "multiplicación"],
+        ["sum", "suma"],
+        ["minus", "resta"]
     ]
 
-    r = loop.create_future()
-
-    for x,i in operaciones:
-        if (x) == opcion:
-            x1 = int(input("x1: "))
-            x2 = int(input("x2: "))
-            loop.create_task(setAfter(r, x1, x2, i))
-            print(i, await r)
+    for h in opc:
+        for x,i in operaciones:
+            if x == h:
+                if contador == 0:
+                    x1 = int(input("x1: "))
+                x2 = int(input("x2: "))
+                r = loop.create_future()
+                loop.create_task(setAfter(r, x1, x2, i))
+                print(i, await r, "     ", contador+1)
+                x1 = await r
+                contador += 1
 
 asyncio.run(main())

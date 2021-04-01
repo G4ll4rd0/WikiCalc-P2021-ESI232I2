@@ -43,7 +43,7 @@ async def main():
                 x2 = int(input("x2: "))
                 r = loop.create_future()
                 loop.create_task(setAfter(r, x1, x2, i))
-                print(i, await r, "     ", contador+1)
+                print(i, await r)
                 x1 = await r
                 contador += 1
 

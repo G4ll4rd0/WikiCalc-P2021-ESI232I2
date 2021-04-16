@@ -1,0 +1,5 @@
+IDEAS PARA EL ALGORITMO:
+
+    - Se tiene que crear un parser de string a formula?
+    - Reemplazar cosas en un string y convertirlo a int?
+    - Leer las diferentes variables de una string

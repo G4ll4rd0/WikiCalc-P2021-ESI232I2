@@ -1,5 +1,6 @@
 IDEAS PARA EL ALGORITMO:
 
-    - Se tiene que crear un parser de string a formula?
-    - Reemplazar cosas en un string y convertirlo a int?
-    - Leer las diferentes variables de una string
+    - Se tiene que crear un parser de string a formula (La respesta es no)
+    - Reemplazar cosas en un string y convertirlo a int ------ Este si se pudo!
+    - Leer las diferentes variables de una string (Faltaria ver esto, en el peor de los casos el usuario ingresa la formula y luego las variables)
+    - Falta leer la formula/variables a partir de un JSON que va a ser entregado por nuestra API

@@ -4,7 +4,7 @@ import math
 #Se usa la funcion de la libreria para parsearlo
 latex = r"\frac {(-b \pm \sqrt({b^2 - 4*x*c}))}{2*x}"
 
-#TODO: Ya que se construya la funcion en la carperta de librerias se tiene que hacer un diccionario con las diversas funiones necesarias
+#TODO: Ya que se construya la funcion en la carperta de librerias se tiene que hacer un diccionario/lista con las diversas funiones necesarias
 #TODO: de math, o calculo para reemplazarlas con un ciclo, aqui se ejemplifica por fines practicos
 latex2 = latex.replace(r"\sqrt", "math.sqrt")
 latex2 = latex2.replace("^", "**")

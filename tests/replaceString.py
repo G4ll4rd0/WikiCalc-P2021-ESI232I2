@@ -1,15 +1,18 @@
 from pylatexenc.latex2text import LatexNodes2Text
 import math
 
+#! El algoritmo ya funciona en lib/latexParser
+#? Esto queda obsoleto
+
 #Se usa la funcion de la libreria para parsearlo
 latex = r"\frac {(-b \pm \sqrt({b^2 - 4*x*c}))}{2*x}"
 
-#TODO: Ya que se construya la funcion en la carperta de librerias se tiene que hacer un diccionario/lista con las diversas funiones necesarias
-#TODO: de math, o calculo para reemplazarlas con un ciclo, aqui se ejemplifica por fines practicos
+#//Ya que se construya la funcion en la carperta de librerias se tiene que hacer un diccionario/lista con las diversas funiones necesarias
+#//de math, o calculo para reemplazarlas con un ciclo, aqui se ejemplifica por fines practicos
 latex2 = latex.replace(r"\sqrt", "math.sqrt")
 latex2 = latex2.replace("^", "**")
 
-#! Tambien se tiene que agregar simbolos como el \pm
+#Tambien se tiene que agregar simbolos como el \pm
 formula1 = latex2.replace(r"\pm", "+")
 formula2 = latex2.replace(r"\pm", "-")
 

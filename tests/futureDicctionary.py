@@ -1,18 +1,15 @@
-import operacionesBasicas.operaciones.division
-import operacionesBasicas.operaciones.multiplicacion
-import operacionesBasicas.operaciones.suma
-import operacionesBasicas.operaciones.resta
 import asyncio
 
 #Funcion para establecer el resultado de la operacion que deseamos
 async def setAfter(r, x1, x2, opc):
     #Arreglo bidimensional con el nombre comun de la operacion y la funcion que la realiza
     operaciones = [
-        ["división", operacionesBasicas.operaciones.division.division( x1,  x2)],
-        ["multiplicación", operacionesBasicas.operaciones.multiplicacion.multiplicacion( x1,  x2)],
-        ["suma", operacionesBasicas.operaciones.suma.suma( x1,  x2)],
-        ["resta", operacionesBasicas.operaciones.resta.resta( x1,  x2)]
-    ]
+    ["\div", "división", x1/x2],
+    ["\mult", "multiplicación", x1*x2],
+    ["\sum", "suma", x1+x2],
+    ["\minus", "resta", x1-x2]
+]
+
 
     #Ciclo para obtener el resultado de la operacion que deseamos
     for i,j in operaciones:

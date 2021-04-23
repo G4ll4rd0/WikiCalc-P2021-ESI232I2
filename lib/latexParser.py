@@ -16,7 +16,7 @@ def latexToLatexFormula(latex):
     text = latexToPlainText(text)
     return text
 
-# Esta funcion obtiene el texto en latex, usa las otras funciones para obtener la formual en texto y luego reemplaza los valores de las variables en la ecuación para finalmente evaluarla en int
+# Esta funcion obtiene el texto en latex, usa las otras funciones para obtener la formula en texto y luego reemplaza los valores de las variables en la ecuación para finalmente evaluarla en int
 def evalFormula(latex, variables):
     f2Eval = latexToLatexFormula(latex)
     for i, j in variables:

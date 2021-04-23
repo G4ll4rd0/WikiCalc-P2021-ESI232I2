@@ -10,6 +10,7 @@ def latexToPlainText(latex):
 def latexToLatexFormula(latex):
     text = latex
     #TODO: Hay que llenar todo este
+    #? Esta lista reemplaza todos aquelos que no son operaciones basicas, por su correspondiente formula en python
     formulas = [[r"\sqrt", "math.sqrt"], ["^", "**"]]
     for i,j in formulas:
         text = text.replace(i, j)
@@ -20,6 +21,8 @@ def latexToLatexFormula(latex):
 def evalFormula(latex, variables):
     f2Eval = latexToLatexFormula(latex)
     for i, j in variables:
+        #Teniendo la lista de variables la iteramos para ir cambiando de una por una
         f2Eval = f2Eval.replace(i, j)
+    #Usamos el comando eval para obtener el numero de respuesta
     result = eval(f2Eval)
     return result

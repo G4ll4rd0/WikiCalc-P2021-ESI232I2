@@ -16,9 +16,11 @@ while opc != 4:
         utilities.clear()
         opc = procedures.calcularFormula()
     if opc == 2:
+        #TODO: Falta hacer toda esta funcion
         print("2. Agregar una nueva Funcion")
         break
     if opc == 3:
+        #TODO: Falta hacer toda esta funcion
         print("3. Modificar una Función")
         break
 

@@ -22,7 +22,7 @@ async def setAfter(r, x1, x2, opc):
 #Funcion Principal
 async def main():
     #Se le solicita al usario las operaciones que desea realizar y en caso de que sea mas de una se separa en una lista que luego usaremos para ir resolviendo
-    #TODO: FALTA AGREGAR SOPORTE PARA PARENTESIS Y O JERARQUIA DE OPERACIONES, AHORITA HACE TODO LINEAL
+    #// FALTA AGREGAR SOPORTE PARA PARENTESIS Y O JERARQUIA DE OPERACIONES, AHORITA HACE TODO LINEAL
     #?Se esta trabajando con un ejemplo de parentesis en el archivo de doubleSplitting.py
     opcion = input("Que desea Realizar? ")
 

@@ -24,7 +24,7 @@ print(text1)
 print(text2)
 
 #Se usa un diccionario para las variables
-#TODO: En las librerias se tiene que hacer una funcion para crear/llenar esta lista
+#//En las librerias se tiene que hacer una funcion para crear/llenar esta lista
 variables = [["x", "(1)"], ["b", "(2)"], ["c", "(-3)"]]
 
 #Se usa un ciclo de este tipo para reemplazar las variables por números

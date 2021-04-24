@@ -1,5 +1,5 @@
 #Funcion que sirve para separar la cadena de texto en un arreglo bidimensional en las que cada elemento sea un parentesis y los subelementos sean las operaciones a realizar
-#TODO: Que sucede cuando hay multiples parentesis?
+#//Que sucede cuando hay multiples parentesis?
 def separarParentesis():
     #En nuestra cadena de ejemplo: (\div\sum)\sum(\mult\res)
     cadena = input("Cadena: ")

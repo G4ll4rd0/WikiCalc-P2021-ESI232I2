@@ -1,12 +1,12 @@
 import urllib.request 
 import json
-import latexParser
+from lib import latexParser
 import requests
 
 #Esta es la url basica para acceder a la API
 #! Todas las funciones obtienen un json, por lo que usamos la libreria nativa de python para convertirlo en un diccionario y poderlo manipular. 
 #? Se regresan diccionarios al mandar ejecutarlas
-ip = "https://app.solucionesenjambre.com/ws/formulas/"
+ip = "http://localhost:8080/wikicalc/ws/formulas/"
 
 #Esta funcion recupera las formulas ordenadas por Tema (en orden alfabetico)
 def allFormulas():
@@ -18,8 +18,8 @@ def allFormulas():
 #Esta funcion nos permite obtener una formula en especifico para manipularla/evaluarla
 #? Se tiene que mandar llamar esta funcion con el valor de la propiedad "formulaId" de la formula que deseemos
 def getFormula(id):
-    url = (ip + "get?keyId=" + id)
-    url = urllib.request.Request(ip + "get?keyId=" + id)
+    url = (ip + "get?keyId=" + str(id))
+    url = urllib.request.Request(url)
     response = urllib.request.urlopen(url)
     data = json.loads(response.read())
     return data
@@ -28,7 +28,7 @@ def getFormula(id):
 #obtendremos una nueva lista que tendra nuestros valores y nuestras variables, esta lista hay que enviarla al parser
 def fillVariables(fDict):
     #Se recuperan la cadena de etxto que tiene los nombres de las variables
-    variables = fDict["formula_Variables"]
+    variables = fDict["formulaVariables"]
     #Se separan por variables 
     listaVariables = variables.split(",")
     listaValores = []
@@ -39,7 +39,6 @@ def fillVariables(fDict):
     return listaValores
 
 #Esta funcion sirve para guardar una nueva formula en la db, hay que mandarle los parametros que requiere.
-#TODO: Esta funcion todavia no se ha podido probar, se necesita reinicar el servidor de la API
 def saveFormula(formulaLatex, formulaNombre, formulaTema, formulaVariables):
     #Se crea un diccionario con las propiedades y se convierte en un json para mandarlo
     data = {}
@@ -55,4 +54,4 @@ def saveFormula(formulaLatex, formulaNombre, formulaTema, formulaVariables):
     return resp
 
 #print(allFormulas())
-#print(saveFormula(r"\frac {(-b - \sqrt({b^2 - 4*x*c}))}{2*x}", "Formula General N", "Algebra3", "x,b,c"))
+#print(saveFormula(r"\frac {(-b - \sqrt({b^2 - 4*x*c}))}{2*x}", "FGN", "ZZZ", "x,b,c"))

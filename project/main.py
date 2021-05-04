@@ -16,13 +16,11 @@ while opc != 4:
         utilities.clear()
         opc = procedures.calcularFormula()
     if opc == 2:
-        #TODO: Falta hacer toda esta funcion
-        print("2. Agregar una nueva Funcion")
-        break
+        utilities.clear()
+        opc = procedures.agregarFormula()
     if opc == 3:
-        #TODO: Falta hacer toda esta funcion
-        print("3. Modificar una Función")
-        break
+        utilities.clear()
+        opc = procedures.modificarFormula()
 
 utilities.clear()
 print("Gracias por usar Wikicalc\n")

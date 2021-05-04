@@ -39,10 +39,10 @@ def fillVariables(fDict):
     return listaValores
 
 #Esta funcion sirve para guardar una nueva formula en la db, hay que mandarle los parametros que requiere.
-def saveFormula(formulaLatex, formulaNombre, formulaTema, formulaVariables):
+def saveFormula(formulaId, formulaLatex, formulaNombre, formulaTema, formulaVariables):
     #Se crea un diccionario con las propiedades y se convierte en un json para mandarlo
     data = {}
-    data['formulaId']         = "0"
+    data['formulaId']         = formulaId
     data['formulaNombre']     = formulaNombre
     data['formulaLatex']      = formulaLatex
     data['formulaTema']       = formulaTema

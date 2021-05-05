@@ -6,7 +6,7 @@ import requests
 #Esta es la url basica para acceder a la API
 #! Todas las funciones obtienen un json, por lo que usamos la libreria nativa de python para convertirlo en un diccionario y poderlo manipular. 
 #? Se regresan diccionarios al mandar ejecutarlas
-ip = "http://localhost:8080/wikicalc/ws/formulas/"
+ip = "https://app.solucionesenjambre.com/ws/formulas/"
 
 #Esta funcion recupera las formulas ordenadas por Tema (en orden alfabetico)
 def allFormulas():

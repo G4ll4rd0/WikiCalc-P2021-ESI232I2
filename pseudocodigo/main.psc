@@ -60,7 +60,7 @@ Algoritmo main
 		Segun opc  Hacer
 			1:
 				clear()
-				calcularFormula()
+				opc = calcularFormula()
 			2:
 				clear()
 				agregarFormula()

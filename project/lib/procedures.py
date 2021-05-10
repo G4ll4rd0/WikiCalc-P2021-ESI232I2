@@ -22,11 +22,11 @@ def calcularFormula():
     utilities.clear()
     menus.unaFormula(form)
     #! Este pedazo añade sporte para el caso de que exista un \pm en la formula
-    if form["formulaLatex"].find("\pm") != -1:
+    if form["formulaLatex"].find(r"\pm") != -1:
         form1 = form
         form2 = form
-        form1["formulaLatex"].replace("\pm", "+")
-        form2["formulaLatex"].replace("\pm", "-")
+        form1["formulaLatex"].replace(r"\pm", "+")
+        form2["formulaLatex"].replace(r"\pm", "-")
         #Se manda obtener el resultado 1
         result = obtainResult(form1)
         #Ya que se obtiene el resultado, se imprime y se espera antes de pasar al siguiente paso

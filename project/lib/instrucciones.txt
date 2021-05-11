@@ -1,1 +1,9 @@
-Hola
+Hola y bienvenido a WikiCalc.
+Esta es una calculadora colectiva, en la que puedes agregar tus propias formulas o utilizar alguna de las que ya tenemos dada de alta.
+Si quieres usar una simplemente sigue las instruccioens presentadas, en el caso de que quieras colaborar con tu propia formula ten en cuenta las siguientes recoemndaciones:
+    - La formulas se escriben en formato LaTeX
+    - No se interpreta la multiplicacion implicita, se tienen que colocar los asteriscos (*)
+    - Antes de cada variable debe de haber un apostrofe (')
+    - Si se quiere que una variable sea negativa, por ejemplo -'b se debe colocar de la manera (-1)*('b)
+    - Cuando se coloquen raices se debe de encerrar lo que va dentor de la raiz entre parentesis
+    - Para elevar al cuadrado se utiliza el simbolo ^

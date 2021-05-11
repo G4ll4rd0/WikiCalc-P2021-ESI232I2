@@ -3,7 +3,7 @@ from tabulate import tabulate
 #Imprime el menú prinicpal del programa
 def mainMenu():
     print(" - BIENVENIDO A WIKICALC - ")
-    print("1. Usar una función")
+    print("1. Usar una Función")
     print("2. Agregar una Funcion")
     print("3. Modificar una Función")
     print("4. Salir")

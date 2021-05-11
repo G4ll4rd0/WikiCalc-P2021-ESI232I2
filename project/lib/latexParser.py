@@ -1,6 +1,8 @@
 from pylatexenc.latex2text import LatexNodes2Text
 import math
 
+constantes = [["'pi", "math.pi"], ["'e", "math.e"], ["'g", "9.81"]]
+
 #Esta funcion recibe una string en latex y la convierte en una string en texto plano
 def latexToPlainText(latex):
     text = LatexNodes2Text().latex_to_text(latex)
@@ -22,6 +24,9 @@ def evalFormula(latex, variables):
     f2Eval = latexToLatexFormula(latex)
     for i, j in variables:
         #Teniendo la lista de variables la iteramos para ir cambiando de una por una
+        f2Eval = f2Eval.replace(i, j)
+    for i, j in constantes:
+        #Teniendo las constantes conocidas se reemplazan
         f2Eval = f2Eval.replace(i, j)
     #Usamos el comando eval para obtener el numero de respuesta
     result = eval(f2Eval)

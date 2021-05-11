@@ -3,10 +3,9 @@ from time import sleep
 import sys
 
 #Esta funcion se utiliza para llenar variables y obtener resultados
-def obtainResult(form):
+def obtainResult(formula, variables):
     #Se mandan llenar las variables y luego a evualar la operación
-    variables = data.fillVariables(form)
-    result = latexParser.evalFormula(form['formulaLatex'], variables)
+    result = latexParser.evalFormula(formula, variables)
     return result
 
 #Esta funcion se manda ejecutar cuando se quiere calcular una formula
@@ -21,23 +20,24 @@ def calcularFormula():
     #Se limpia la pantalla y se imprime un nuevo menu, en esta ocasion con solo la formula necesaria
     utilities.clear()
     menus.unaFormula(form)
-    #! Este pedazo añade sporte para el caso de que exista un \pm en la formula
-    if form["formulaLatex"].find(r"\pm") != -1:
-        form1 = form
-        form2 = form
-        form1["formulaLatex"].replace(r"\pm", "+")
-        form2["formulaLatex"].replace(r"\pm", "-")
+    variables = data.fillVariables(form)
+    form1 = form["formulaLatex"]
+    form2 = form["formulaLatex"]
+    #! Este pedazo añade soporte para el caso de que exista un \pm en la formula
+    if str(form["formulaLatex"]).find(r"\pm") != -1:
+        form1 = form1.replace(r"\pm", "+")
+        form2 = form2.replace(r"\pm", "-")
         #Se manda obtener el resultado 1
-        result = obtainResult(form1)
+        result = obtainResult(form1, variables)
         #Ya que se obtiene el resultado, se imprime y se espera antes de pasar al siguiente paso
         print("\n\n El resultado 1 es: ", result)
         #Se manda obtener el resultado 2
-        result = obtainResult(form2)
+        result = obtainResult(form2, variables)
         #Ya que se obtiene el resultado, se imprime y se espera antes de pasar al siguiente paso
         print("\n\n El resultado 2 es: ", result)
     else:
         #Se manda obtener el resultado
-        result = obtainResult(form)
+        result = obtainResult(form1, variables)
         #Ya que se obtiene el resultado, se imprime y se espera antes de pasar al siguiente paso
         print("\n\n El resultado es: ", result)
     sleep(2)
@@ -63,7 +63,7 @@ def agregarFormula():
     #?Para la API se necesita poner 0 en el Id cuando se quiere ingresar una nueva
     formulaId = "0"
     #Se solicitan los datos necesarios para ingresar la funcion
-    formulaNombre = input("Ingrese el nombre de la fomula: ")
+    formulaNombre = input("Ingrese el nombre de la formula: ")
     formulaLatex = input("Ingrese la formula en formato LaTeX(recuerde poner las variables precedidas de apostrofes): ")
     formulaTema = input("Ingrese el tema al que pertenece la formula: ")
     formulaVariables = input("Ingrese las variables separadas por comas y precedidas por apostrofes: ")
@@ -106,7 +106,7 @@ def modificarFormula():
     menus.unaFormula(form)
     #Se solicitan los datos necesarios para modificar la funcion
     formulaId = str(fId)
-    formulaNombre = input("Ingrese el nombre de la fomula: ")
+    formulaNombre = input("Ingrese el nombre de la formula: ")
     formulaLatex = input("Ingrese la formula en formato LaTeX(recuerde poner las variables precedidas de apostrofes): ")
     formulaTema = input("Ingrese el tema al que pertenece la formula: ")
     formulaVariables = input("Ingrese las variables separadas por comas y precedidas por apostrofes: ")

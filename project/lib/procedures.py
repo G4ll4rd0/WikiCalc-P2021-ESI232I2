@@ -137,7 +137,7 @@ def modificarFormula():
 
 def instrucciones():
     print(" -- INSTRUCCIONES DE USO -- ")
-    archivo = open("instrucciones.txt","rt")
+    archivo = open("project\lib\instrucciones.txt","rt")
     contenido = archivo.read()
     print(contenido)
     input("Presione la tecla ENTER para continuar  ")

@@ -6,8 +6,8 @@ from lib import procedures
 
 opc = menus.mainMenu()
 
-while opc != 4:
-    if opc < 1 or opc > 4:
+while opc != 5:
+    if opc < 1 or opc > 5:
         utilities.clear()
         print("Esa no es una opción valida, intente de nuevo")
         print("---------------------------------------------\n")
@@ -21,6 +21,9 @@ while opc != 4:
     if opc == 3:
         utilities.clear()
         opc = procedures.modificarFormula()
+    if opc == 4:
+        utilities.clear()
+        opc = procedures.instrucciones()
 
 utilities.clear()
 print("Gracias por usar Wikicalc\n")

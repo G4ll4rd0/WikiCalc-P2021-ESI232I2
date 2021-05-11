@@ -6,7 +6,8 @@ def mainMenu():
     print("1. Usar una Función")
     print("2. Agregar una Funcion")
     print("3. Modificar una Función")
-    print("4. Salir")
+    print("4. Instrucciones de Uso")
+    print("5. Salir")
     opc = int(input("Ingrese el numero de opción: "))
     return opc
 

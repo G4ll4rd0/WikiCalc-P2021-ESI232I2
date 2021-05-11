@@ -54,7 +54,7 @@ def calcularFormula():
         utilities.clear()
         opc = menus.mainMenu()
     elif num == 3:
-        opc = 4
+        opc = 5
     return opc
 
 #Esta funcion se manda llamar cuando se va a agregar una nueva función
@@ -84,7 +84,7 @@ def agregarFormula():
             utilities.clear()
             opc = menus.mainMenu()
         elif num == 3:
-            opc = 4
+            opc = 5
     #Si el resultado es Falso significa que hubo un problema y se tiene que repetir el proceso
     else:
         print("\n\nHubo un error al intentar agregar la formula, revise los datos e intente de nuevo") 
@@ -127,10 +127,20 @@ def modificarFormula():
             utilities.clear()
             opc = menus.mainMenu()
         elif num == 3:
-            opc = 4
+            opc = 5
     #Si el resultado es Falso significa que hubo un problema y se tiene que repetir el proceso
     else:
         print("\n\nHubo un error al intentar modificar la formula, revise los datos e intente de nuevo") 
         input("Presione la tecla ENTER para continuar  ")
         opc = 3
+    return opc
+
+def instrucciones():
+    print(" -- INSTRUCCIONES DE USO -- ")
+    archivo = open("instrucciones.txt","rt")
+    contenido = archivo.read()
+    print(contenido)
+    input("Presione la tecla ENTER para continuar  ")
+    utilities.clear()
+    opc = menus.mainMenu()
     return opc

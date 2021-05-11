@@ -13,4 +13,3 @@ Librerias Utilizadas:
  - urllib
  - json
  - requests
- - 
